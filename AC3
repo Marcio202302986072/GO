@@ -1,0 +1,45 @@
+package main
+
+import (
+	"fmt"
+)
+func questionario() int{
+  var x int
+  fmt.Println("Escolha uma opção:")
+  fmt.Println("1 - Adicionar contato")
+  fmt.Println("2 - Excluir ultimo contato")
+  fmt.Println("3 - Exibir contatos")
+  fmt.Println("0 - Sair")
+  fmt.Scanln(&x)
+  return x
+}
+func main() {
+  var nome [5]int;
+  var email [5]int;
+  var x int;
+  i:= 0;
+	for{
+    x = questionario()
+    if x == 1{
+      fmt.Println("Digite o nome do contrato:")
+      fmt.Scanln(nome[i])
+      fmt.Println("Digite o e-mail do contrato:")
+      fmt.Scanln(email[i])
+      i++
+    }
+    if x == 2{
+      nome[i] = 0
+      email[i] = 0
+    }
+    if x == 3{
+      for z := 0; z <= i; z++ {
+          fmt.Println("Nome:",nome[z])
+          fmt.Println("Email:",email[z])
+      }
+    }
+    if x == 0{
+      break
+    }
+  }
+  
+}
