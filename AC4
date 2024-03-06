@@ -15,3 +15,30 @@ func main() {
   Hanoi(n, "pino1", "pino2", "pino3")
 }
  ex2:
+package main
+
+import (
+  "fmt"
+)
+
+func main() {
+  var x int
+  y := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+  q := len(y)
+  fmt.Println("Digite o valor da soma dos numeros:")
+  fmt.Scanln(&x)
+  soma := false
+  
+  for i := 0; i < q; i++ {
+    for j := i + 1; j < q; j++ {
+      if y[i]+y[j] == x {
+        fmt.Println(y[i], "+", y[j], "=", x)
+        soma = true
+      }
+    }
+  }
+  if !soma {
+    fmt.Println("(-1,-1)")
+  }
+}
+
